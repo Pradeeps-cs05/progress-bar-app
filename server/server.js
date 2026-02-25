@@ -17,9 +17,8 @@ mongoose.connect(process.env.MONGO_URI)
 // API Routes
 app.use("/api/task", require("./routes/taskRoutes"));
 
-const PORT = process.env.PORT || 7000;
+const path = require("path");
 
-// Serve React build
 app.use(express.static(path.join(__dirname, "../client/build")));
 
 app.get("*", (req, res) => {
