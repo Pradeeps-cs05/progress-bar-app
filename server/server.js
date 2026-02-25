@@ -17,8 +17,6 @@ mongoose.connect(process.env.MONGO_URI)
 // API Routes
 app.use("/api/task", require("./routes/taskRoutes"));
 
-const path = require("path");
-
 app.use(express.static(path.join(__dirname, "../client/build")));
 
 app.use((req, res) => {
